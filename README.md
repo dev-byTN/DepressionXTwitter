@@ -19,15 +19,15 @@ Send them through dm generic message about help
 
 ## To install PostgreSql
 ```
-apt install postgresql
+sudo apt install postgresql
 ```
 
-### To access Postgre server
+#### To access Postgre server
 ```
 sudo su postgres
 ```
 
-### To access the shell
+#### To access the shell
 ```
 psql
 ```
