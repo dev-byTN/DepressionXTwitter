@@ -16,3 +16,18 @@ The goal here is to classify all the user who tweets about depression.
 
 Create a system who put each user into a group of depression
 Send them through dm generic message about help
+
+## To install PostgreSql
+```
+apt install postgresql
+```
+
+### To access Postgre server
+```
+sudo su postgres
+```
+
+### To access the shell
+```
+psql
+```
