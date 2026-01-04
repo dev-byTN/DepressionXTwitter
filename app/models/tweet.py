@@ -13,8 +13,6 @@ from nbclient import NotebookClient
 
 
 class Tweet:
-    def __init__(self, items=None):
-        self.l = items
         
     def __init__(self, username, tweet, url, date, depressionType, createdAt, followers, following, photo):
         self.username = username
@@ -141,7 +139,7 @@ def runNotebook(): #to execute Jupyter Notebook file
         
 def readJsonFile():
     
-    with open("ressource/community.json", "r") as f:
+    with open("../ressource/community.json", "r") as f:
         data = json.load(f)
         
     return data
@@ -173,14 +171,14 @@ def getRelevantData(data):
     
 def saveTweetsInJson(data):
     
-    with open("ressource/fetchedTweets.json", "w", encoding="utf8") as f:
+    with open("../ressource/fetchedTweets.json", "w", encoding="utf8") as f:
         json.dump(data, f, sort_keys=False)
     f.close()
 
 if __name__ == "__main__":
     
     load_dotenv()
-    api_key =  os.getenv("API_KEY")
+    api_key =  os.getenv("API_KEY") # might change the path
     base_url = "https://api.twitterapi.io/twitter/tweet/advanced_search"
     query = "depression lang:fr"
     

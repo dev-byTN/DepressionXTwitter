@@ -1,2 +1,5 @@
 postgresql
 Twitter.io api key
+fastapi
+uvicorn
+sqlalchemy
