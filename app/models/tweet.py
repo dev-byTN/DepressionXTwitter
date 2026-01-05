@@ -10,10 +10,24 @@ import numpy as np
 from dotenv import load_dotenv
 import nbformat
 from nbclient import NotebookClient
+from sqlalchemy import Column, Integer, String, Text, DateTime
+from database.base import Base
 
-
-class Tweet:
+class Tweet(Base):
+    
+    __tablename__ = "tweets"
         
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, nullable=False)
+    tweet = Column(String, nullable=False)
+    url = Column(String, nullable=False)
+    date = Column(DateTime, nullable=False)
+    depressionType = Column(String)
+    createdAt = Column(DateTime)
+    followers = Column(Integer)
+    following = Column(Integer)
+    photo = Column(String)
+
     def __init__(self, username, tweet, url, date, depressionType, createdAt, followers, following, photo):
         self.username = username
         self.url = url
@@ -42,7 +56,7 @@ class Tweet:
         return { f" {self.username}, {self.tweet}, {self.url}, {self.date}, {self.depressionType}, \
                     {self.createdAt}, {self.followers}, {self.following}, {self.photo}"
                 }
-       
+    
     def toJSON(self): # To make the Object JSON Seriable
         return json.dumps(
             self,
@@ -192,3 +206,5 @@ if __name__ == "__main__":
     
     #I clean it into a Jupyter notebook file
     runNotebook()
+    
+    
