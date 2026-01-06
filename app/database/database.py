@@ -16,8 +16,11 @@ def get_tweets():
     try:
         fetch = readJsonFile()
         listOfTweets = getRelevantData(fetch)
-        db.add_all(listOfTweets)
-        db.commit()
+        
+        for i in listOfTweets:
+            
+            db.add(i)
+            db.commit()
         print("Tweets saved in the database")
         
     finally:

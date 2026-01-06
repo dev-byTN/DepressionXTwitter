@@ -17,7 +17,7 @@ class Tweet(Base):
     
     __tablename__ = "tweets"
         
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
     username = Column(String, nullable=False)
     tweet = Column(String, nullable=False)
     url = Column(String, nullable=False)
@@ -177,7 +177,7 @@ def getRelevantData(data):
             photo = authorInfo["profilePicture"]
             
         objectTweet = Tweet(username, tweet, url, date, None, createdAt, followers, following, photo)   
-        objectTweet = objectTweet.toDict() #Save it in JSON Format
+        #objectTweet = objectTweet.toDict() #Save it in JSON Format
         listOfTweet.append(objectTweet)
         
     return listOfTweet
