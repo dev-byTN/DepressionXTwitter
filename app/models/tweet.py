@@ -153,7 +153,7 @@ def runNotebook(): #to execute Jupyter Notebook file
         
 def readJsonFile():
     
-    with open("../ressource/community.json", "r") as f:
+    with open("/home/tristan/Documents/python/twitter/api/app/ressources/community.json", "r") as f:
         data = json.load(f)
         
     return data
@@ -185,7 +185,7 @@ def getRelevantData(data):
     
 def saveTweetsInJson(data):
     
-    with open("../ressource/fetchedTweets.json", "w", encoding="utf8") as f:
+    with open("../ressources/fetchedTweets.json", "w", encoding="utf8") as f:
         json.dump(data, f, sort_keys=False)
     f.close()
 

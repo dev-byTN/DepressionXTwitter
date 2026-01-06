@@ -8,7 +8,7 @@ load_dotenv()
 url = os.getenv("DATABASE_URL")
 
 engine = create_engine(url)
-SessionLocal = sessionmaker(autocomit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def get_tweets():
     db = SessionLocal()
