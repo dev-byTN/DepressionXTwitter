@@ -10,7 +10,7 @@ import numpy as np
 from dotenv import load_dotenv
 import nbformat
 from nbclient import NotebookClient
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import *
 from database.base import Base
 
 class Tweet(Base):

@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from base import Base
+from database.base import Base
 from models.tweet import Tweet
 from dotenv import load_dotenv
 from models.tweet import readJsonFile, getRelevantData

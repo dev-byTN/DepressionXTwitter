@@ -27,7 +27,7 @@ sudo apt install postgresql
 sudo su postgres
 ```
 
-#### To access the shell
+#### To access the shell as a super user
 ```
-psql
+psql -U postgres
 ```
