@@ -21,11 +21,11 @@ def get_tweets():
         listOfTweets = getRelevantData(fetch)
         session.add_all(listOfTweets)
         session.commit()
-        print("Tweets saved in the database.")
+        print("Tweets saved in the database.\n")
         
     except SQLAlchemyError as e:
         session.rollback()
-        print("Error creating the database.", e)    
+        print("Error creating the database.\n", e)    
         
         
 def create_database():
@@ -43,9 +43,11 @@ def show_tweets():
             print( f" {i.id}, {i.username}, {i.tweet}, {i.url}, {i.date}, {i.depressionType}, \
                     {i.createdAt}, {i.followers}, {i.following}, {i.photo}" )
             
+        print("\n")
+        
     except SQLAlchemyError as e:
         session.rollback()
-        print("Error accessing the databse.", e)
+        print("Error accessing the databse.\n", e)
         
         
 def add_record(nb_user):
@@ -66,10 +68,11 @@ def add_record(nb_user):
             session.add(record)
             
         session.commit()
+        print("Record(s) added succesfully.\n")
         
     except SQLAlchemyError as e:
         session.rollback()
-        print("Error adding user(s) into the database", e)
+        print("Error adding user(s) into the database\n", e)
         
         
 
@@ -78,7 +81,8 @@ def delete_record(id):
     try:
         session.query(Tweet).filter(Tweet.id == id).delete()
         session.commit()
+        print("Record deleted succesfully.\n")
         
     except SQLAlchemyError as e:
         session.rollback()
-        print("No user with that id in the database", e)
+        print("No user with that id in the database.\n", e)
