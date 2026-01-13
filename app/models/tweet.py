@@ -182,7 +182,8 @@ def getRelevantData(data):
         
     return listOfTweet
 
-    
+
+        
 def saveTweetsInJson(data):
     
     with open("../ressources/fetchedTweets.json", "w", encoding="utf8") as f:

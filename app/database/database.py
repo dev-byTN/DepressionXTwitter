@@ -75,6 +75,27 @@ def add_record(nb_user):
         print("Error adding user(s) into the database\n", e)
         
         
+def get_users_id():
+    
+    list = []
+    try:
+        user = session.query(Tweet).all()
+        
+        for i in user:
+            username = user["username"]
+            id = user["id"]
+            
+            record = [id, username]
+            list.append(record)
+            
+        session.commit()
+        
+    except SQLAlchemyError as e:
+        session.rollback()
+        print("Error fetching users.\n", e)
+        
+    return list
+
 
 def delete_record(id):
     
