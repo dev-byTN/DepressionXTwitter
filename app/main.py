@@ -11,10 +11,6 @@ tweets = getRelevantData(data)
 async def get_all_tweets():
     return tweets
 
-@app.get("/")
-async def root():
-    return { "msg": "yo"}
-
 @app.get('/dirty/users')
 async def get_users():
     return get_users_id()
