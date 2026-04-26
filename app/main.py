@@ -7,10 +7,10 @@ app = FastAPI()
 data = readJsonFile()
 tweets = getRelevantData(data)
 
-@app.get('/dirty/tweets')
+@app.get('/DepressionXTwitter/tweets/list_tweets')
 async def get_all_tweets():
     return tweets
 
-@app.get('/dirty/users')
+@app.get('/DepressionXTwitter/users/list_users')
 async def get_users():
     return get_users_id()
