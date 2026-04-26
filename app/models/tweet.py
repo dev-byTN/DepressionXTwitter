@@ -153,7 +153,7 @@ def runNotebook(): #to execute Jupyter Notebook file
         
 def readJsonFile():
     
-    with open("/home/tristan/Documents/python/twitter/api/app/ressources/community.json", "r") as f:
+    with open("/home/tristan/Documents/python/twitter/app/ressources/community.json", "r") as f:
         data = json.load(f)
         
     return data

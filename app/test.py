@@ -27,7 +27,7 @@ if __name__ == "__main__":
                 break
 
             case 3:
-                nb_user = int(input("How many users fo you want to add in the database: "))
+                nb_user = int(input("How many users do you want to add in the database: "))
                 add_record(nb_user)
                 break
             
