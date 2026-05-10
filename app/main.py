@@ -15,5 +15,10 @@ async def get_all_tweets():
 async def get_users():
     return get_users_id()
 
+'''@app.post('/DepressionXTwitter/users/add_users')
+async def add_user():
+    return add_re'''
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=5049)

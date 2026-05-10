@@ -50,26 +50,13 @@ def show_tweets():
         print("Error accessing the databse.\n", e)
         
         
-def add_record(nb_user):
+def add_record(user):
     
     try:
-        for i in range(nb_user):
-            username = str(input("Enter a username: "))
-            tweet = str(input("Enter a tweet: "))
-            url = str(input("Enter the url: "))
-            date = input("Enter the date of the tweet: ")
-            type = str(input("Enter the type of depression: "))
-            creation = input("Enter the date of creation of the user: ")
-            nb_followers = int(input("Enter the number of followers: "))
-            nb_following = int(input("Enter the number of following people: "))
-            picture = str(input("Enter the link to the profile picture: "))
-        
-            record = Tweet(username, tweet, url, date, type, creation, nb_followers, nb_following, picture)        
-            session.add(record)
-            
+        session.add(user)
         session.commit()
         print("Record(s) added succesfully.\n")
-        
+    
     except SQLAlchemyError as e:
         session.rollback()
         print("Error adding user(s) into the database\n", e)
